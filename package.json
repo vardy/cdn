@@ -19,5 +19,9 @@
   "homepage": "https://github.com/vardy/yamvp#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5"
   }
 }
