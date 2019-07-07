@@ -44,6 +44,14 @@ app.use(function(err, req, res, next) {
 });
 
 /**
+ * Robots.txt
+ */
+app.use('/robots.txt', function (req, res, next) {
+    res.type('text/plain');
+    res.send("User-agent: \nDisallow: *");
+});
+
+/**
  * Routing
  */
 
