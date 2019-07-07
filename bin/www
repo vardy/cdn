@@ -21,6 +21,7 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+server.on('uncaughtException', onUncaughtException);
 
 /**
  * Port normalisation
@@ -79,4 +80,11 @@ function onListening () {
         ? 'pipe ' + addr
         : 'port ' + addr.port;
     console.log('Listening on ' + bind);
+}
+
+/**
+ * Listener for uncaught exception event to prevent server crashing.
+ */
+function onUncaughtException () {
+    console.log('WARNING: UNCAUGHT EXCEPTION.');
 }
