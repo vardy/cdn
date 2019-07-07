@@ -1,8 +1,11 @@
+#!/usr/bin/env node
+
 /**
  * Module dependencies
  */
-const app = require('./app');
+const app = require('../app');
 const http = require('http');
+const debug = require('debug')('yamvp:server');
 
 /**
  * Set express app port from environment variables
@@ -49,6 +52,8 @@ function onError (error) {
     var bind = typeof port === 'string'
         ? 'Pipe ' + port
         : 'Port ' + port;
+
+    debug('Listening on ' + bind);
 
     // handle specific listen errors with friendly messages
     switch (error.code) {

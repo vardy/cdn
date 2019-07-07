@@ -2,10 +2,9 @@
   "name": "yamvp",
   "version": "1.0.0",
   "description": "Yet Another Minimum Viable Product",
-  "main": "./index.js",
+  "private": true,
   "scripts": {
-    "run": "node --harmony ./index.js",
-    "test": ""
+    "start": "node --harmony ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -18,7 +17,13 @@
   },
   "homepage": "https://github.com/vardy/yamvp#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "cookie-parser": "^1.4.4",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "http-errors": "^1.7.3",
+    "jade": "^1.11.0",
+    "morgan": "^1.9.1",
+    "stylus": "^0.54.5"
   },
   "devDependencies": {
     "webpack": "^4.35.2",
