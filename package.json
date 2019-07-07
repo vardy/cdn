@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/vardy/yamvp/issues"
   },
-  "homepage": "https://github.com/vardy/yamvp#readme"
+  "homepage": "https://github.com/vardy/yamvp#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
