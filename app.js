@@ -27,6 +27,21 @@ app.use(stylus.middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 /**
+ * Robots.txt
+ */
+app.use('/robots.txt', function (req, res, next) {
+    res.type('text/plain');
+    res.send("User-agent: \nDisallow: *");
+});
+
+/**
+ * Routing
+ */
+
+let indexRouter = require('./routes/index');
+app.use('/', indexRouter);
+
+/**
  * Error handling
  */
 app.use(function(req, res, next) {
@@ -42,20 +57,5 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
-
-/**
- * Robots.txt
- */
-app.use('/robots.txt', function (req, res, next) {
-    res.type('text/plain');
-    res.send("User-agent: \nDisallow: *");
-});
-
-/**
- * Routing
- */
-
-let indexRouter = require('./routes/index');
-app.use('/', indexRouter);
 
 module.exports = app;
