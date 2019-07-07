@@ -9,3 +9,4 @@
  - Add progressive web app features
    - HTML metadata
    - Service worker for caching
+ - Use Webpack if needed
