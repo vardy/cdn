@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/vardy/yamvp.git"
   },
-  "author": "Jarred Vardy, Gedeon Stol",
+  "author": "Jarred Vardy",
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/vardy/yamvp/issues"
