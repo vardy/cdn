@@ -8,9 +8,9 @@ services:
     restart: always
     ports:
      - "3000:3000"
-#    networks: 
-#     - webdeploy_web-net
+    networks: 
+     - webdeploy_web-net
 
-#networks: 
-#  webdeploy_web-net:
-#    external: true
+networks: 
+  webdeploy_web-net:
+    external: true
