@@ -1,0 +1,16 @@
+version: '2.0'
+
+services:
+  cdn:
+    build: .
+    env_file: 
+     - .env
+    restart: always
+    ports:
+     - "3000:3000"
+#    networks: 
+#     - webdeploy_web-net
+
+#networks: 
+#  webdeploy_web-net:
+#    external: true

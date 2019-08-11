@@ -1,5 +1,5 @@
 {
-  "name": "yamvp",
+  "name": "jarredvardy-cdn",
   "version": "1.0.0",
   "description": "Yet Another Minimum Viable Product",
   "private": true,
@@ -8,20 +8,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vardy/yamvp.git"
+    "url": "git+https://github.com/vardy/cdn.git"
   },
   "author": "Jarred Vardy",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/vardy/yamvp/issues"
+    "url": "https://github.com/vardy/cdn/issues"
   },
-  "homepage": "https://github.com/vardy/yamvp#readme",
+  "homepage": "https://github.com/vardy/cdn#readme",
   "dependencies": {
+    "busboy": "^0.3.1",
     "cookie-parser": "^1.4.4",
     "debug": "^4.1.1",
     "express": "^4.17.1",
     "http-errors": "^1.7.3",
     "jade": "^1.11.0",
+    "minio": "^7.0.11",
     "morgan": "^1.9.1",
     "stylus": "^0.54.5"
   },

@@ -1,11 +1,10 @@
 FROM node:10
 
-WORKDIR /usr/src/yamvp
+WORKDIR /CDN
 
 COPY package*.json ./
 RUN npm install
 
 COPY . .
-EXPOSE 3000
 
-CMD [ "DEBUG=yamvp:*", "npm", "start" ]
+CMD [ "npm", "start" ]
