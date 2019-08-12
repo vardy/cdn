@@ -30,22 +30,22 @@ router.get('/:image_name', function(req, res, next) {
         process.env.S3_DIRECTORY + req.params.image_name, 
             function(err, dataStream) {
                 if (err) {
-                    res.status(404).end('File does not exist.')
-                    return
+                    throw_404(err, next);
+                    return;
                 }
 
                 if (dataStream == undefined) {
-                    res.status(404).end('File does not exist.')
-                    return
+                    throw_404(err, next);
+                    return;
                 }
 
                 dataStream.on('error', function(err) {
-                    res.status(500).end('Something went wrong!')
-                    return
+                    throw_500(err, next);
+                    return;
                 })
 
                 res.set('Content-Type', type);
-                dataStream.pipe(res)
+                dataStream.pipe(res);
             }
         )
 });
@@ -67,5 +67,17 @@ router.post('/upload', function(req, res, next) {
 
     req.pipe(busboy);
 });
+
+function throw_500(err, next) {
+    err.status = 500;
+    err.message = 'Server Error, Something Went Wrong'
+    next(err);
+}
+
+function throw_404(err, next) {
+    err.status = 404;
+    err.message = 'File Not Found'
+    next(err);
+}
 
 module.exports = router;
