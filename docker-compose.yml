@@ -9,8 +9,8 @@ services:
     ports:
      - "3000:3000"
     networks: 
-     - webdeploy_web-net
+     - webnet_main
 
 networks: 
-  webdeploy_web-net:
+  webnet_main:
     external: true
