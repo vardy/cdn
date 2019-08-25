@@ -86,6 +86,12 @@ router.get('/d/:doc_name', function(req, res, next) {
 
 /* POST new screenshot. */
 router.post('/upload', function(req, res, next) {
+    var pass = req.header('auth');
+    if(pass !== process.env.AUTH) {
+        res.status(401).send('Invalid authentication');
+        return;
+    }
+
     var busboy = new Busboy({ headers: req.headers });
 
     busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
