@@ -8,9 +8,9 @@ services:
     restart: always
     ports:
      - "3000:3000"
-    #networks: 
-    # - webnet_main
+    networks: 
+     - webnet_main
 
-#networks: 
-#  webnet_main:
-#    external: true
+networks: 
+  webnet_main:
+    external: true
