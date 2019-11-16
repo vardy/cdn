@@ -9,8 +9,8 @@ services:
     ports:
      - "3000:3000"
     networks: 
-     - webnet_main
+     - web-net_main
 
 networks: 
-  webnet_main:
+  web-net_main:
     external: true
