@@ -1,16 +1,10 @@
 version: '3.7'
 
 services:
+
+  # Access on cdn:3000
   cdn:
     build: .
     env_file: 
      - .env
     restart: always
-    ports:
-     - "3000:3000"
-    networks: 
-     - web-net_main
-
-networks: 
-  web-net_main:
-    external: true

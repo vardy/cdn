@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  cdn:
+    build: .
+    env_file: 
+     - .env
+    restart: always
+    networks: 
+     - web
+    labels:
+     - "traefik.enable=true"
+     - "traefik.http.routers.cdn-web.rule=Host(`cdn.vardy.dev`)"
+     - "traefik.http.routers.cdn-web.entrypoints=web"
+     - "traefik.http.routers.cdn-web.middlewares=redirect@file"
+     - "traefik.http.routers.cdn-secured.rule=Host(`cdn.vardy.dev`)"
+     - "traefik.http.routers.cdn-secured.entrypoints=web-secured"
+     - "traefik.http.routers.cdn-secured.tls.certresolver=mytlschallenge"
+     - "traefik.http.services.cdn.loadbalancer.server.port=3000"
+
+networks: 
+  web:
+    external: true
